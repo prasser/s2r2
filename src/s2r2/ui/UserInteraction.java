@@ -38,7 +38,15 @@ import s2r2.rendering.Camera;
 public class UserInteraction {
     
     /** Initial camera position*/
-    private volatile Camera     camera    = new Camera(new Point(0, 0, 50), new Vector(0, 0, 1), new Vector(0, 1, 0));
+    private volatile Camera     camera    = new Camera(new Point(Settings.CAMERA_INITIAL_POS_X, 
+                                                                 Settings.CAMERA_INITIAL_POS_Y,
+                                                                 Settings.CAMERA_INITIAL_POS_Z), 
+                                                       new Vector(Settings.CAMERA_INITIAL_DIR_X,
+                                                                  Settings.CAMERA_INITIAL_DIR_Y,
+                                                                  Settings.CAMERA_INITIAL_DIR_Z), 
+                                                       new Vector(Settings.CAMERA_INITIAL_UP_X,
+                                                                  Settings.CAMERA_INITIAL_UP_Y,
+                                                                  Settings.CAMERA_INITIAL_UP_Z));
     /** The user interface*/
     private UserInterface       uinterface;
     /** Drag start position*/

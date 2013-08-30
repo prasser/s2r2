@@ -47,4 +47,6 @@ public class Camera {
         this.direction = direction;
         this.up = up;
     }
+    
+    
 }

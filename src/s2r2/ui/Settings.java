@@ -40,5 +40,14 @@ public class Settings {
     public static final String  APP_KEY_BACKWARD         = "s";
     public static final String  APP_KEY_LEFT             = "a";
     public static final String  APP_KEY_RIGHT            = "d";
-
+    
+    public static final double CAMERA_INITIAL_POS_X      = 53.33298173782452500d;
+    public static final double CAMERA_INITIAL_POS_Y      = 21.10241298952124000d;
+    public static final double CAMERA_INITIAL_POS_Z      = 53.97534983438923000d;
+    public static final double CAMERA_INITIAL_UP_X       = -0.14067419697688770d;
+    public static final double CAMERA_INITIAL_UP_Y       = 0.979175599912774800d;
+    public static final double CAMERA_INITIAL_UP_Z       = -0.14637593668484414d;
+    public static final double CAMERA_INITIAL_DIR_X      = -0.67749993148345500d;
+    public static final double CAMERA_INITIAL_DIR_Y      = -0.20271741303608093d;
+    public static final double CAMERA_INITIAL_DIR_Z      = -0.70496003677989160d;
 }
