@@ -50,9 +50,9 @@ public class UserInteraction {
     /** The user interface*/
     private UserInterface       uinterface;
     /** Drag start position*/
-    private int                 dragStartX;
+    private int                 dragX;
     /** Drag start position*/
-    private int                 dragStartY;
+    private int                 dragY;
     /** Camera params*/
     private Vector              direction = camera.direction;
     /** Camera params*/
@@ -150,13 +150,13 @@ public class UserInteraction {
 
         // Create new view
         int width = uinterface.getWidth();
-        int delta = e.getX() - dragStartX;
+        int delta = e.getX() - dragX;
         double percentage = (double) delta / (double) width;
         double deltaX = percentage * 2f * Math.PI * Settings.UI_MOUSE_SPEED;
 
         // Create new view
         int height = uinterface.getHeight();
-        delta = e.getY() - dragStartY;
+        delta = e.getY() - dragY;
         percentage = (double) delta / (double) height;
         double deltaY = percentage * 2f * Math.PI * Settings.UI_MOUSE_SPEED;
 
@@ -174,15 +174,15 @@ public class UserInteraction {
         setCamera(new Camera(position, direction, up));
 
         // Store current drag start position
-        dragStartX = e.getX();
-        dragStartY = e.getY();
+        dragX = e.getX();
+        dragY = e.getY();
     }
 
     /**
      * Handle mouse pressed
      */
     protected void handleMousePressed(MouseEvent e) {
-        dragStartX = e.getX();
-        dragStartY = e.getY();
+        dragX = e.getX();
+        dragY = e.getY();
     }
 }
