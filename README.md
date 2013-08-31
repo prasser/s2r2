@@ -38,7 +38,7 @@ an adaptive approach resulting in lossy rendering. To this end, a scene is rende
 1. A grid of 25% of all rays required to render the whole scene is traced to derive a 
 first approximate image. An overview is shown in the following figure:
 
-[![Scheme](https://raw.github.com/prasser/s2r2/master/doc/img/scheme.png)]
+[Scheme](https://raw.github.com/prasser/s2r2/master/doc/img/scheme.png)
 
 In this example, three threads are used to render the scene. Each thread is responsible for rendering
 a distinct set of rows of pixels. The rows are assigned in an interleaved manner, in order to
