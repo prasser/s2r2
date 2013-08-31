@@ -16,7 +16,7 @@ Try it out
 ------
 The raytracer should be able to render the contained scene with 10 to 30 FPS at 800x600 on modern commodity hardware.
 You can fly through the scene pressing the WASD keys of your keyboards and dragging with your mouse. 
-[Download an executable JAR file](https://raw.github.com/prasser/s2r2/master/s2r2.jar)
+Download the [executable JAR file](https://raw.github.com/prasser/s2r2/master/s2r2.jar).
 
 Background
 ------
