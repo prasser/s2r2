@@ -51,8 +51,8 @@ shown in the following figure:
 In this example, three threads are used to render the scene. Each thread is responsible for rendering
 a distinct set of rows of pixels. The rows are assigned in an interleaved manner to
 split the workload equally amongst the threads. The black pixels are rendered in the first phase.
-In the second phase, a subset of the pixels not processed in the first phase (the white pixels in the above figure).
+In the second phase, a subset of the pixels not processed in the first phase (the white pixels in the above figure)
 are rendered. Finally, rays are traced for all pixels not processed in the first or second phase.
-The four phases are executed in a multithreaded manner following the interleaved scheme, i.e.,
+The phases 1-3 are all executed in a multithreaded manner following the interleaved scheme, i.e.,
 thread-1 renders rows 0 and 3, thread-2 renders rows 1 and 4 and thread-3 renders rows 2 and 5. 
-All threads are synchronized after each of the four phases.
+All threads are synchronized after each of the phases. The fourth phase is executed by a single thread.
