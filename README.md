@@ -36,12 +36,22 @@ primitives for which rather efficient ray intersection tests exist. Finally, the
 an adaptive approach resulting in lossy rendering. To this end, a scene is rendered in four phases:
 
 1. A grid of 25% of all rays required to render the whole scene is traced to derive a 
-first approximate image.
- 
-2. The color of pixels with almost identical neighboring pixels is interpolated. 
+first approximate image. An overview is shown in the following figure:
 
-3. A second set of rays is traced only for those pixels whose color could not be interpolated. 
+[![Scheme](https://raw.github.com/prasser/s2r2/master/doc/img/scheme.png)]
+
+In this example, three threads are used to render the scene. Each thread is responsible for rendering
+a distinct set of rows of pixels. The rows are assigned in an interleaved manner, in order to
+split the workload equally amongst the threads. The black pixels are rendered in the first phase.
+ 
+2. This phase renders a subset of the pixels not processed in the first phase (the white pixels in the above figure). 
+To this end, the color of pixels with almost identical neighboring pixels is interpolated. Again, this
+is performed in a multithreaded manner.
+
+3. This phase renders all pixels not processed in the first or second phase.
+Here, a second set of rays is traced only for those pixels for which the color could not be interpolated. 
 
 4. An additional layer of sprites is rendered on top of the scene, e.g., coronas for lights.
   
-
+The four phases are executed in a multithreaded manner. All threads are synchronized after each of the
+four phases.
