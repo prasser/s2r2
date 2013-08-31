@@ -43,7 +43,8 @@ an adaptive approach resulting in lossy rendering. To this end, a scene is rende
 
 4. An additional layer of sprites is rendered on top of the scene, e.g., coronas for lights.
 
-An overview is shown in the following figure:
+The scheme with which the work is distributed amongst these phases and the rendering threads is
+shown in the following figure:
 
 ![Scheme](https://raw.github.com/prasser/s2r2/master/doc/img/scheme.png "Rendering scheme")
 
@@ -53,5 +54,5 @@ split the workload equally amongst the threads. The black pixels are rendered in
 In the second phase, a subset of the pixels not processed in the first phase (the white pixels in the above figure).
 are rendered. Finally, rays are traced for all pixels not processed in the first or second phase.
 The four phases are executed in a multithreaded manner following the interleaved scheme, i.e.,
-thread-1 renders rows 0 and 3, thread-2 renders rows 1 and 4 and thread-3 renders tows 2 and 5. 
+thread-1 renders rows 0 and 3, thread-2 renders rows 1 and 4 and thread-3 renders rows 2 and 5. 
 All threads are synchronized after each of the four phases.
