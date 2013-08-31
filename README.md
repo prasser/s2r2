@@ -56,3 +56,11 @@ are rendered. Finally, rays are traced for all pixels not processed in the first
 The phases 1-3 are all executed in a multithreaded manner following the interleaved scheme, i.e.,
 thread-1 renders rows 0 and 3, thread-2 renders rows 1 and 4 and thread-3 renders rows 2 and 5. 
 All threads are synchronized after each of the phases. The fourth phase is executed by a single thread.
+
+Limitations
+------
+From an implementation perspective, some parts of the code are ugly and need a rework. The code is mostly 
+unoptimized (e.g., making effective use of caching, reducing pressure on garbage collection) and contains some
+premature optimizations. From a conceptual perspective, most performance improvements are due to the adaptive rendering approach.
+This only works well if the scene is not too diverse, e.g., does not contain complex textures.
+Color-differences are computed in RGB space, which does not adequately reflect human perception. 
