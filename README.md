@@ -27,3 +27,21 @@ compared to many of the other "toy" raytracers is that it renders in real-time u
 **CPU**. Real-time raytracing is an emerging trend and many comparable renderers have been built using
 GPUs (i.e., with OpenCL or CUDA). Furthermore, S2R2 is written in **Java**, which is quite rare in the
 real-time raytracing world.
+
+The raytracer implements a few well-known tricks to achieve said performance. Raytracing is perfect
+for parallelization, so the renderer tries to split the workload equally amongst several threads, 
+leveraging modern multi-core processors. The rendering process itself is accelerated by packing the
+scene into a hierarchy of axis-aligned bounding boxes (AABBs). Moreover, the scene is constructed of
+primitives for which rather efficient ray intersection tests exist. Finally, the raytracer implements
+an adaptive approach resulting in lossy rendering. To this end, a scene is rendered in four phases:
+
+1. A grid of 25% of all rays required to render the whole scene is traced to derive a 
+first approximate image.
+ 
+2. The color of pixels with almost identical neighboring pixels is interpolated. 
+
+3. A second set of rays is traced only for those pixels whose color could not be interpolated. 
+
+4. An additional layer of sprites is rendered on top of the scene, e.g., coronas for lights.
+  
+
