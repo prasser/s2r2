@@ -61,6 +61,8 @@ Limitations
 ------
 From an implementation perspective, some parts of the code are ugly and need a rework. The code is mostly 
 unoptimized (e.g., making effective use of caching, reducing pressure on garbage collection) and contains some
-premature optimizations. From a conceptual perspective, most performance improvements are due to the adaptive rendering approach.
+premature optimizations. Documentation for the code can be found 
+[here](https://raw.github.com/prasser/s2r2/master/doc/javadoc/index.html).
+From a conceptual perspective, most performance improvements are due to the adaptive rendering approach.
 This only works well if the scene is not too diverse, e.g., does not contain complex textures.
 Color-differences are computed in RGB space, which does not adequately reflect human perception. 
