@@ -60,8 +60,7 @@ All threads are synchronized after each of the phases. The fourth phase is execu
 Limitations
 ------
 From an implementation perspective, some parts of the code are ugly and need a rework. The code is mostly 
-unoptimized (e.g., making effective use of caching, reducing pressure on garbage collection) and contains some
-premature optimizations. Documentation for the code can be found 
+unoptimized and contains some premature optimizations. Documentation for the code can be found 
 [here](https://rawgithub.com/prasser/s2r2/master/doc/javadoc/index.html).
 From a conceptual perspective, most performance improvements are due to the adaptive rendering approach.
 This only works well if the scene is not too diverse, e.g., does not contain complex textures.
