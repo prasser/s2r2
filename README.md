@@ -15,7 +15,7 @@ Screenshots are taken from the scene shown in the following YouTube video:
 Try it out
 ------
 The raytracer should be able to render the contained scene with 10 to 30 FPS at 800x600 on modern commodity hardware.
-You can fly through the scene pressing the WASD keys of your keyboards and dragging with your mouse. 
+You can fly through the scene pressing the WASD keys of your keyboard and dragging with your mouse. 
 Download the [executable JAR file](https://raw.github.com/prasser/s2r2/master/s2r2.jar).
 
 Background
@@ -60,7 +60,7 @@ All threads are synchronized after each of the phases. The fourth phase is execu
 Limitations
 ------
 From an implementation perspective, some parts of the code are ugly and need a rework. The code is mostly 
-unoptimized and contains some premature optimizations. Documentation for the code can be found 
+unoptimized and contains some premature optimizations. Documentation can be found 
 [here](https://rawgithub.com/prasser/s2r2/master/doc/javadoc/index.html).
 From a conceptual perspective, most performance improvements are due to the adaptive rendering approach.
 This only works well if the scene is not too diverse, e.g., does not contain complex textures.
