@@ -23,9 +23,9 @@ Background
 The code is a stripped down version of a raytracer I built years ago, just because everyone should write 
 a raytracer once in his or her life. It is very basic, featuring only a few geometric primitives,
 basic textures, blinn-phong shading, reflections and hard shadows. What makes it somewhat interesting
-compared to many of the other "toy" raytracers is that it renders in real-time using **only** the
-**CPU**. Real-time raytracing is an emerging trend and many comparable renderers have been built using
-GPUs (i.e., with OpenCL or CUDA). Furthermore, S2R2 is written in **Java**, which is quite rare in the
+compared to many of the other "toy" raytracers is that it renders in real-time using only the
+CPU. Real-time raytracing is an emerging trend and many comparable renderers have been built using
+GPUs (i.e., with OpenCL or CUDA). Furthermore, S2R2 is written in Java, which is quite rare in the
 real-time raytracing world.
 
 The raytracer implements a few well-known tricks to achieve said performance. Raytracing is perfect
